@@ -1,0 +1,24 @@
+//join array of string
+var myColor = ["Red", "Green", "White", "Black"];
+var nColor = myColor.join(',')
+
+function joinArray(array, separator = ';') {
+    return array.toString().replaceAll(',', separator);
+    }
+
+
+    function joinArray2(arr, separator =',')
+{
+    let result = ''
+    if (typeof separator !== 'string') return "Please, enter the separator as a string"
+    for (let i = 0; i < arr.length ; i++) {
+        if(i != arr.length - 1) result += arr[i] + separator
+        else result += arr[i]
+    }
+    return result
+}
+console.log(nColor);
+console.log(myColor.toString());
+console.log(myColor.join());
+console.log(myColor.join('+'));
+console.log(joinArray2(myColor, separator =','))
