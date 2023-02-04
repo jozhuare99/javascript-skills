@@ -1,47 +1,17 @@
-//randomly arrange or shuffle an array
-
-let array = [40,90,50,70,80,30,60,10,20];
-function fisher_yates(arr){
-    let i = arr.length
-    while(--i > 0){
-        let temp = Math.floor(Math.random() * (i + 1));
-        [arr[temp], arr[i]] = [arr[i], arr[temp]]
+// find duplicated values in array 
+function find_duplicate_in_array(a){
+    var object = {};
+    var result = []
+    a.forEach(function(item){
+        if(!object[item]) object[item] = 0;
+        object[item] += 1
+    })
+    for(let prop in object){
+        if(object[prop] > 1){
+            result.push(prop);
+        }
     }
-    return arr
+    return result;
 }
-// console.log(fisher_yates(array))
-
-//solution 2
-function fy(){
-    for(let i = array.length -1; i > 0; i--){
-        const r = Math.floor(Math.random() * i)
-        let temp = array[i]
-        array[i] = array[r]
-        array[r] = temp
-    }
-    console.log(array);
-}
-// fy()
-
-//solution 3
-function shuffle(arr){
-    let ctr = arr.length;
-    let temp;
-    let index;
-    while(ctr > 0){
-        index = ~~(Math.random() * ctr)
-        ctr--;
-        temp = arr[ctr]
-        arr[ctr] = arr[index]
-        arr[index] = temp;
-    }
-    return arr
-}
-var myArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-// console.log(shuffle(myArray));
-
-// solution 4
-function shuffle4(a){
-    return a.sort(()=>0.5-Math.random())
-}
-console.log(shuffle4(myArray));
+const array = [1, 2, -2, 4, 5, 4, 7, 8, 7, 7, 71, 3, 6]
+// console.log(find_duplicate_in_array(array));
