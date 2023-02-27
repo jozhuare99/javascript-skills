@@ -15,3 +15,9 @@ function find_duplicate_in_array(a){
 }
 const array = [1, 2, -2, 4, 5, 4, 7, 8, 7, 7, 71, 3, 6]
 // console.log(find_duplicate_in_array(array));
+
+//s 2
+function findDuplicate(a){
+    let dup = []
+    
+}
