@@ -178,6 +178,14 @@ class ListBinding{
             this.listElement.appendChild(ListBinding.createListItem(list))
         }
     }
+    add(text){
+        this.textList.push(text)
+        this.update()
+    }
+    remove(index){
+        this.textList.splice(index, 1)
+        this.update()
+    }
 }
 const list1 = new ListBinding(myList)
 
